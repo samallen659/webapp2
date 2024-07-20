@@ -16,19 +16,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: action/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
+          node-version: "20.x"
 
       - name: Install dependencies
         run:
           npm install
 
       - name: 'Login to Azure Subscription'
-        uses: azure/login@v1
+        uses: azure/login@v2
         with: 
           client-id: ${{ secrets.AZURE_CLIENTID_7A87FEBA0B81427DBC488DC52FBBE5A0 }}
           tenant-id: ${{ secrets.AZURE_TENANTID_490927D7D05C455EAFAAC3BD1FD41C00 }}
