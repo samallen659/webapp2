@@ -54,7 +54,7 @@ jobs:
             --type zip `
             --clean true
 
-        -env:
+        env:
           FILE_NAME: main
           RESOURCE_GROUP_NAME: "rg-uks"
           WEB_APP_NAME: "satestinguks"
