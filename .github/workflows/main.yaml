@@ -30,9 +30,9 @@ jobs:
       - name: 'Login to Azure Subscription'
         uses: azure/login@v1
         with: 
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZURE_CLIENTID_7A87FEBA0B81427DBC488DC52FBBE5A0 }}
+          tenant-id: ${{ secrets.AZURE_TENANTID_490927D7D05C455EAFAAC3BD1FD41C00 }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTIONID_FF2AA0E596F347408DB7B5027680E788 }}
 
       - name: Build Next.js app
         run: |
@@ -42,7 +42,7 @@ jobs:
       
       - name: Deploy
         shell: pwsh
-        runs: |
+        run: |
           $ZIP_FILE_NAME = "./${FILE_NAME}.zip"
           zip $ZIP_FILE_NAME ./* .next -qr
 
